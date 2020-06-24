@@ -1,0 +1,53 @@
+.hidden {
+	display: none;
+}
+
+body {
+	text-align: center;
+}
+
+main {
+	margin: 0 auto;
+	width: 90%;
+}
+
+h1,
+h2 {
+	margin: 0;
+}
+
+#buttonSec {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#dataSec {
+	display: flex;
+	justify-content: center;
+}
+
+.indFight {
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.comparisonBox {
+	text-align: center;
+}
+
+.compareBoxes {
+	display: flex;
+}
+
+.compareBoxes div {
+	padding: 10px;
+	border: 1px solid black;
+	margin: 5px;
+}
+
+#fList {
+	display: flex;
+	flex-direction: column;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UFC Fights</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>UFC Data</h1>
+    <h2 id="dataSubtitle"></h2>
+    <p>Data for fighters compiled from watching matches on ESPN+ and UFC Fight Pass. Alternate bout data came from Wikipedia. https://en.wikipedia.org/wiki/List_of_UFC_events</p>
+
+    <div id="buttonSec">
+      <div id="prelimSec">
+        <button id="fighters">Fighters</button>
+        <button id="fightingStyles">Fighting Styles</button>
+      </div>
+      
+  
+      <div id="fighterCompSec">
+        Compare Two Fighters:
+        <select name="fighter1" id="fighter1" class="" ></select>
+        <select name="fighter2" id="fighter2" class=""></select>
+        <button id="fighterComparisonBtn">Compare</button>
+      </div>
+      
+      <div id="styleCompSec">
+        Compare Two Fighting Styles:
+        <select name="fightingStyle1" id="fightingStyle1" class="" ></select>
+        <select name="fightingStyle2" id="fightingStyle2" class=""></select>
+        <button id="fightStyleComparisonBtn">Compare</button>
+      </div>
+    </div>
+
+    <hr>
+    <div id="dataSec">
+      <div class="hidden" id="fighterStats"></div>
+      <div class="hidden" id="fightingStyleStats"></div>
+      <div class="hidden" id="fighterComparison"></div>
+      <div class="hidden" id="fightingStyleComparison"></div>
+    </div>
+    
+
+  </main>
+    
+
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="fightData.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
