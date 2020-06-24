@@ -1,5 +1,3 @@
-console.log('array page');
-
 let fights = {
 	'UFC 1: The Beginning'                      : {
 		fight1 : {
