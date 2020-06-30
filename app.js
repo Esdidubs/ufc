@@ -18,7 +18,9 @@ $(function() {
 	fighterListSetup();
 
 	$('#dataSubtitle').replaceWith(` 
-        <h2 id="dataSubtitle">Data from ${Object.keys(fights)[0]} until ${Object.keys(fights)[Object.keys(fights).length - 1]}</h2>
+        <h2 id="dataSubtitle">Data from ${Object.keys(
+			fights
+		)[0]} until ${Object.keys(fights)[Object.keys(fights).length - 1]}. (${Object.keys(fights).length} total events)</h2>
 	`);
 
 	$('#fighterStats').toggleClass('hidden');
