@@ -8,6 +8,8 @@
 - add comments to js
 - fill out rest of data
 
+-add isTie to all the draws
+
 */
 
 $(function() {
