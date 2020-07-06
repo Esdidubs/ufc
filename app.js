@@ -8,12 +8,17 @@
 - add comments to js
 - fill out rest of data
 
--add isTie to all the draws
+- win/lsos ratio
+- list number of fights
+- alphabetize fighters
+
 
 */
 
+// Runs at the start
 $(function() {
 	buttons();
+	fightCountInit();
 	fighterSetup();
 	fightingStyleSetup();
 	styleListSetup();
@@ -22,18 +27,21 @@ $(function() {
 	$('#dataSubtitle').replaceWith(` 
         <h2 id="dataSubtitle">Data from ${Object.keys(
 			fights
-		)[0]} until ${Object.keys(fights)[Object.keys(fights).length - 1]}. (${Object.keys(fights).length} total events)</h2>
+		)[0]} until ${Object.keys(fights)[Object.keys(fights).length - 1]}. (${Object.keys(fights).length} total events & ${fightCount} total fights)</h2>
 	`);
 
 	$('#fighterStats').toggleClass('hidden');
 	$('#fightingStyleStats').toggleClass('hidden');
 });
 
+// Global variables
 let fighters = {};
 let fightingStyles = {};
 let fighterSort = 'total';
 let styleSort = 'total';
+let fightCount = 0;
 
+// Button functionality
 function buttons() {
 	$('body').on('click', '#fighters', function() {
 		event.preventDefault();
@@ -114,8 +122,23 @@ function buttons() {
 		styleSort = 'ties';
 		sortFightingStyle();
 	});
+	$('body').on('click', '#fSortRatio', function() {
+		event.preventDefault();
+		fighterSort = 'winRatio';
+		sortFighters();
+	});
 }
 
+// Counts the number of total fights
+function fightCountInit() {
+	for (let ufc in fights) {
+		for (let fight in fights[ufc]) {
+			fightCount++;
+		}
+	}
+}
+
+// Counts the wins, losses, and ties for each fighter
 function fighterSetup() {
 	for (let ufc in fights) {
 		for (let fight in fights[ufc]) {
@@ -153,28 +176,60 @@ function fighterSetup() {
 	sortFighters();
 }
 
+// Sorts the fighters by either total fights, wins, losses, or ties
 function sortFighters() {
 	let fighterArr = Object.entries(fighters);
 
 	for (let i = 1; i < Object.keys(fighterArr).length; i++) {
 		for (var j = 0; j < i; j++) {
+			// Sorts by the current sort method
 			if (fighterArr[j][1][fighterSort] < fighterArr[i][1][fighterSort]) {
 				var x = fighterArr[j];
 				fighterArr[j] = fighterArr[i];
 				fighterArr[i] = x;
+			} else if (fighterArr[j][1][fighterSort] == fighterArr[i][1][fighterSort]) {
+				// Sorts by wins two fighters are equal in the sorting method
+				if (fighterArr[j][1]['wins'] < fighterArr[i][1]['wins']) {
+					var x = fighterArr[j];
+					fighterArr[j] = fighterArr[i];
+					fighterArr[i] = x;
+				} else if (fighterArr[j][1]['wins'] == fighterArr[i][1]['wins']) {
+					// Sorts by win ratio if the sorting method and wins are equal
+					if (fighterArr[j][1]['winRatio'] < fighterArr[i][1]['winRatio']) {
+						var x = fighterArr[j];
+						fighterArr[j] = fighterArr[i];
+						fighterArr[i] = x;
+					} else if (fighterArr[j][1]['winRatio'] == fighterArr[i][1]['winRatio']) {
+						// Sorts by ties if the sorting method, wins, and win ratio are the same
+						if (fighterArr[j][1]['ties'] < fighterArr[i][1]['ties']) {
+							var x = fighterArr[j];
+							fighterArr[j] = fighterArr[i];
+							fighterArr[i] = x;
+						}
+					}
+				}
 			}
 		}
 	}
-
+	winRat(fighterArr);
 	printFighters(fighterArr);
 }
 
+function winRat(fighterArr) {
+	for (let person in fighterArr) {
+		fighterArr[person][1].winRatio = fighterArr[person][1].wins / fighterArr[person][1].total * 100;
+	}
+}
+
+// Displays the fighters on the page
 function printFighters(fighterArr) {
 	let fighterList = ``;
 	for (let person in fighterArr) {
+		let winRatio = fighterArr[person][1].wins / fighterArr[person][1].total * 100;
+
 		fighterList += `<p class="indFight">${fighterArr[person][1].name} - Total: ${fighterArr[person][1].total} - Wins: ${fighterArr[person][1].wins} - Losses: ${fighterArr[
 			person
-		][1].losses} - Ties: ${fighterArr[person][1].ties}</p>`;
+		][1].losses} - Ties: ${fighterArr[person][1].ties} - Win Ratio: ${fighterArr[person][1].winRatio.toFixed(2)}%</p>`;
 	}
 
 	$('#fighterStats').replaceWith(` 
@@ -184,6 +239,7 @@ function printFighters(fighterArr) {
 			<button id="fSortWins">Sort by Wins</button>
 			<button id="fSortLosses">Sort by Losses</button>
 			<button id="fSortTies">Sort by Ties</button>
+			<button id="fSortRatio">Sort by Win Ratio</button>
             <div id="fList">${fighterList}</div>
         </div>
     `);
