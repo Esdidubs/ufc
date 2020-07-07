@@ -10,8 +10,7 @@
 
 - win/lsos ratio
 - list number of fights
-- alphabetize fighters
-
+- alphabetize fighting styles
 
 */
 
@@ -458,8 +457,21 @@ function fighterListSetup() {
 function styleListSetup() {
 	let listItems = '';
 
-	for (var key in fightingStyles) {
-		listItems += `<option value="${key}">${fightingStyles[key].name}</option>`;
+	let abcFighting = Object.entries(fightingStyles);
+
+	for (let i = 1; i < Object.keys(abcFighting).length; i++) {
+		for (var j = 0; j < i; j++) {
+			// Sorts by the current sort method
+			if (abcFighting[j][1].name > abcFighting[i][1].name) {
+				var x = abcFighting[j];
+				abcFighting[j] = abcFighting[i];
+				abcFighting[i] = x;
+			}
+		}
+	}
+
+	for (var key in abcFighting) {
+		listItems += `<option value="${abcFighting[key][1].name}">${abcFighting[key][1].name}</option>`;
 	}
 
 	$('#fightingStyle1').replaceWith(` 
