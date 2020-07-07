@@ -225,8 +225,6 @@ function winRat(fighterArr) {
 function printFighters(fighterArr) {
 	let fighterList = ``;
 	for (let person in fighterArr) {
-		let winRatio = fighterArr[person][1].wins / fighterArr[person][1].total * 100;
-
 		fighterList += `<p class="indFight">${fighterArr[person][1].name} - Total: ${fighterArr[person][1].total} - Wins: ${fighterArr[person][1].wins} - Losses: ${fighterArr[
 			person
 		][1].losses} - Ties: ${fighterArr[person][1].ties} - Win Ratio: ${fighterArr[person][1].winRatio.toFixed(2)}%</p>`;
@@ -428,8 +426,21 @@ function compareFighters() {
 function fighterListSetup() {
 	let listItems = '';
 
-	for (var key in fighters) {
-		listItems += `<option value="${key}">${fighters[key].name}</option>`;
+	let abcFighters = Object.entries(fighters);
+
+	for (let i = 1; i < Object.keys(abcFighters).length; i++) {
+		for (var j = 0; j < i; j++) {
+			// Sorts by the current sort method
+			if (abcFighters[j][1].name > abcFighters[i][1].name) {
+				var x = abcFighters[j];
+				abcFighters[j] = abcFighters[i];
+				abcFighters[i] = x;
+			}
+		}
+	}
+
+	for (var key in abcFighters) {
+		listItems += `<option value="${abcFighters[key][1].name}">${abcFighters[key][1].name}</option>`;
 	}
 
 	$('#fighter1').replaceWith(` 
