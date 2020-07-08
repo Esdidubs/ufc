@@ -43,6 +43,7 @@ h2 {
 
 .compareBoxes {
 	display: flex;
+	justify-content: center;
 }
 
 .compareBoxes div {
