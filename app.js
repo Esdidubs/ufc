@@ -4,13 +4,8 @@
 ========================================================
 
 - Show the fighter style when doing comparison and on the main stats page
-- make it prettier
-- add comments to js
-- fill out rest of data
+- fill out rest of data for fighting styles
 
-- win/lsos ratio
-- list number of fights
-- alphabetize fighting styles
 
 */
 
@@ -19,8 +14,6 @@ $(function() {
 	buttons();
 	fightCountInit();
 	fighterSetup();
-	fightingStyleSetup();
-	styleListSetup();
 	fighterListSetup();
 
 	$('#dataSubtitle').replaceWith(` 
@@ -30,14 +23,11 @@ $(function() {
 	`);
 
 	$('#fighterStats').toggleClass('hidden');
-	$('#fightingStyleStats').toggleClass('hidden');
 });
 
 // Global variables
 let fighters = {};
-let fightingStyles = {};
 let fighterSort = 'total';
-let styleSort = 'total';
 let fightCount = 0;
 
 // Button functionality
@@ -51,16 +41,6 @@ function buttons() {
 		$('#fighterComparison').addClass('hidden');
 		$('#fightingStyleComparison').addClass('hidden');
 	});
-	$('body').on('click', '#fightingStyles', function() {
-		event.preventDefault();
-
-		if ($('#fightingStyleStats').hasClass('hidden')) {
-			$('#fightingStyleStats').removeClass('hidden');
-		}
-		$('#fighterStats').addClass('hidden');
-		$('#fighterComparison').addClass('hidden');
-		$('#fightingStyleComparison').addClass('hidden');
-	});
 	$('body').on('click', '#fighterComparisonBtn', function() {
 		event.preventDefault();
 		compareFighters();
@@ -70,16 +50,6 @@ function buttons() {
 
 		$('#fightingStyle1').get(0).selectedIndex = 0;
 		$('#fightingStyle2').get(0).selectedIndex = 0;
-	});
-	$('body').on('click', '#fightStyleComparisonBtn', function() {
-		event.preventDefault();
-		compareFightingStyles();
-		$('#fighterStats').addClass('hidden');
-		$('#fightingStyleStats').addClass('hidden');
-		$('#fighterComparison').addClass('hidden');
-
-		$('#fighter1').get(0).selectedIndex = 0;
-		$('#fighter2').get(0).selectedIndex = 0;
 	});
 	$('body').on('click', '#fSortWins', function() {
 		event.preventDefault();
@@ -100,26 +70,6 @@ function buttons() {
 		event.preventDefault();
 		fighterSort = 'ties';
 		sortFighters();
-	});
-	$('body').on('click', '#sSortWins', function() {
-		event.preventDefault();
-		styleSort = 'wins';
-		sortFightingStyle();
-	});
-	$('body').on('click', '#sSortLosses', function() {
-		event.preventDefault();
-		styleSort = 'losses';
-		sortFightingStyle();
-	});
-	$('body').on('click', '#sSortTotal', function() {
-		event.preventDefault();
-		styleSort = 'total';
-		sortFightingStyle();
-	});
-	$('body').on('click', '#sSortTies', function() {
-		event.preventDefault();
-		styleSort = 'ties';
-		sortFightingStyle();
 	});
 	$('body').on('click', '#fSortRatio', function() {
 		event.preventDefault();
@@ -214,6 +164,7 @@ function sortFighters() {
 	printFighters(fighterArr);
 }
 
+// Calculates the win ratio and turns it into a percentage
 function winRat(fighterArr) {
 	for (let person in fighterArr) {
 		fighterArr[person][1].winRatio = fighterArr[person][1].wins / fighterArr[person][1].total * 100;
@@ -224,9 +175,9 @@ function winRat(fighterArr) {
 function printFighters(fighterArr) {
 	let fighterList = ``;
 	for (let person in fighterArr) {
-		fighterList += `<p class="indFight">${fighterArr[person][1].name} - Total: ${fighterArr[person][1].total} - Wins: ${fighterArr[person][1].wins} - Losses: ${fighterArr[
-			person
-		][1].losses} - Ties: ${fighterArr[person][1].ties} - Win Ratio: ${fighterArr[person][1].winRatio.toFixed(2)}%</p>`;
+		fighterList += `<div class="indFight"><div>${fighterArr[person][1].name} - Total: ${fighterArr[person][1].total} - Win Ratio: ${fighterArr[person][1].winRatio.toFixed(
+			2
+		)}% </div><div> Wins: ${fighterArr[person][1].wins} - Losses: ${fighterArr[person][1].losses} - Ties: ${fighterArr[person][1].ties}</div></div>`;
 	}
 
 	$('#fighterStats').replaceWith(` 
@@ -242,6 +193,196 @@ function printFighters(fighterArr) {
     `);
 }
 
+// compares two fighters head-to-head
+function compareFighters() {
+	let fighter1 = $('#fighter1').val();
+	let fighter2 = $('#fighter2').val();
+	let fighter1Wins = 0;
+	let fighter2Wins = 0;
+	let totalFights = 0;
+	let fighterTies = 0;
+
+	if (fighter1 != null && fighter2 != null) {
+		for (let ufc in fights) {
+			for (let fight in fights[ufc]) {
+				if (fights[ufc][fight].winner == fighter1 && fights[ufc][fight].loser == fighter2) {
+					fighter1Wins++;
+					totalFights++;
+				} else if (fights[ufc][fight].winner == fighter2 && fights[ufc][fight].loser == fighter1) {
+					fighter2Wins++;
+					totalFights++;
+				} else if (
+					(fights[ufc][fight].tie1 == fighter1 && fights[ufc][fight].tie2 == fighter2) ||
+					(fights[ufc][fight].tie1 == fighter2 && fights[ufc][fight].tie2 == fighter1)
+				) {
+					fighterTies++;
+					totalFights++;
+				}
+			}
+		}
+		let fighter1Total = `${fighters[fighter1].wins} - ${fighters[fighter1].losses} - ${fighters[fighter1].ties}`;
+		let fighter2Total = `${fighters[fighter2].wins} - ${fighters[fighter2].losses} - ${fighters[fighter2].ties}`;
+		let f1Ratio = fighters[fighter1].wins / (fighters[fighter1].wins + fighters[fighter1].losses + fighters[fighter1].ties) * 100;
+		let f2Ratio = fighters[fighter2].wins / (fighters[fighter2].wins + fighters[fighter2].losses + fighters[fighter2].ties) * 100;
+
+		$('#fighterComparison').replaceWith(` 
+        
+		
+		<div class="comparisonBox" id="fighterComparison">
+			<div class="compareHeadliner">
+				<h2>Fighter Comparison</h2>
+				<h3>${fighter1} vs ${fighter2}</h3>
+				<p>Total Fights Against Each Other: ${totalFights}</p>
+			</div>
+			<div class="compareBoxes">
+				<div>
+				<h4>${fighter1}</h4>
+				<p>Total Record: ${fighter1Total}</p>
+				<p>Win Ratio: ${f1Ratio.toFixed(2)}%</p>
+				<p>Record Against ${fighter2}: ${fighter1Wins} - ${fighter2Wins} - ${fighterTies}</p>
+				</div>
+				<div>
+				<h4>${fighter2}</h4>
+				<p>Total Record: ${fighter2Total}</p>
+				<p>Win Ratio: ${f2Ratio.toFixed(2)}%</p>
+				<p>Record Against ${fighter1}: ${fighter2Wins} - ${fighter1Wins} - ${fighterTies}</p>
+				</div>
+			</div>
+        </div>
+    `);
+	}
+}
+
+// creates the dropdown of fighters and alphabetizes them
+function fighterListSetup() {
+	let listItems = '';
+
+	let abcFighters = Object.entries(fighters);
+
+	for (let i = 1; i < Object.keys(abcFighters).length; i++) {
+		for (var j = 0; j < i; j++) {
+			// Sorts by the current sort method
+			if (abcFighters[j][1].name > abcFighters[i][1].name) {
+				var x = abcFighters[j];
+				abcFighters[j] = abcFighters[i];
+				abcFighters[i] = x;
+			}
+		}
+	}
+
+	for (var key in abcFighters) {
+		listItems += `<option value="${abcFighters[key][1].name}">${abcFighters[key][1].name}</option>`;
+	}
+
+	$('#fighter1').replaceWith(` 
+        <select name="fighter1" id="fighter1" class="">
+            <option value="" disabled selected>Fighter 1</option>
+            ${listItems}
+        </select>`);
+	$('#fighter2').replaceWith(` 
+        <select name="fighter2" id="fighter2" class="">
+            <option value="" disabled selected>Fighter 2</option>
+            ${listItems}
+        </select>`);
+}
+
+// creates the dropdown of styles and alphabetizes them
+function styleListSetup() {
+	let listItems = '';
+
+	let abcFighting = Object.entries(fightingStyles);
+
+	for (let i = 1; i < Object.keys(abcFighting).length; i++) {
+		for (var j = 0; j < i; j++) {
+			// Sorts by the current sort method
+			if (abcFighting[j][1].name > abcFighting[i][1].name) {
+				var x = abcFighting[j];
+				abcFighting[j] = abcFighting[i];
+				abcFighting[i] = x;
+			}
+		}
+	}
+
+	for (var key in abcFighting) {
+		listItems += `<option value="${abcFighting[key][1].name}">${abcFighting[key][1].name}</option>`;
+	}
+
+	$('#fightingStyle1').replaceWith(` 
+        <select name="fightingStyle1" id="fightingStyle1" class="">
+            <option value="" disabled selected>Fighting Style 1</option>
+            ${listItems}
+        </select>`);
+	$('#fightingStyle2').replaceWith(` 
+        <select name="fightingStyle2" id="fightingStyle2" class="">
+            <option value="" disabled selected>Fighting Style 2</option>
+            ${listItems}
+        </select>`);
+}
+
+/*
+  Code for fighting style when ready to add
+
+// Runs at the start
+$(function() {	
+	fightingStyleSetup();
+	styleListSetup();
+	$('#fightingStyleStats').toggleClass('hidden');
+});
+
+// Global variables
+let fightingStyles = {};
+let styleSort = 'total';
+
+// Button functionality
+function buttons() {
+	$('body').on('click', '#fightingStyles', function() {
+		event.preventDefault();
+
+		if ($('#fightingStyleStats').hasClass('hidden')) {
+			$('#fightingStyleStats').removeClass('hidden');
+		}
+		$('#fighterStats').addClass('hidden');
+		$('#fighterComparison').addClass('hidden');
+		$('#fightingStyleComparison').addClass('hidden');
+	});
+	$('body').on('click', '#fightStyleComparisonBtn', function() {
+		event.preventDefault();
+		compareFightingStyles();
+		$('#fighterStats').addClass('hidden');
+		$('#fightingStyleStats').addClass('hidden');
+		$('#fighterComparison').addClass('hidden');
+
+		$('#fighter1').get(0).selectedIndex = 0;
+		$('#fighter2').get(0).selectedIndex = 0;
+	});
+	$('body').on('click', '#fSortWins', function() {
+		event.preventDefault();
+		fighterSort = 'wins';
+		sortFighters();
+	});
+	$('body').on('click', '#fSortLosses', function() {
+		event.preventDefault();
+		fighterSort = 'losses';
+		sortFighters();
+	});
+	$('body').on('click', '#fSortTotal', function() {
+		event.preventDefault();
+		fighterSort = 'total';
+		sortFighters();
+	});
+	$('body').on('click', '#fSortTies', function() {
+		event.preventDefault();
+		fighterSort = 'ties';
+		sortFighters();
+	});
+	$('body').on('click', '#fSortRatio', function() {
+		event.preventDefault();
+		fighterSort = 'winRatio';
+		sortFighters();
+	});
+}
+
+// Counts the wins, losses, and ties for each fighting style
 function fightingStyleSetup() {
 	for (let ufc in fights) {
 		for (let fight in fights[ufc]) {
@@ -279,6 +420,7 @@ function fightingStyleSetup() {
 	sortFightingStyle();
 }
 
+// sorts the fighting styles by chosen sorting method
 function sortFightingStyle() {
 	let styleArr = Object.entries(fightingStyles);
 
@@ -295,6 +437,7 @@ function sortFightingStyle() {
 	printFightingStyle(styleArr);
 }
 
+// displays the fighting style
 function printFightingStyle(styleArr) {
 	let fightingStylesList = ``;
 
@@ -316,6 +459,7 @@ function printFightingStyle(styleArr) {
     `);
 }
 
+// compares two fighting styles
 function compareFightingStyles() {
 	let style1 = $('#fightingStyle1').val();
 	let style2 = $('#fightingStyle2').val();
@@ -368,120 +512,4 @@ function compareFightingStyles() {
 	}
 }
 
-function compareFighters() {
-	let fighter1 = $('#fighter1').val();
-	let fighter2 = $('#fighter2').val();
-	let fighter1Wins = 0;
-	let fighter2Wins = 0;
-	let totalFights = 0;
-	let fighterTies = 0;
-
-	if (fighter1 != null && fighter2 != null) {
-		for (let ufc in fights) {
-			for (let fight in fights[ufc]) {
-				if (fights[ufc][fight].winner == fighter1 && fights[ufc][fight].loser == fighter2) {
-					fighter1Wins++;
-					totalFights++;
-				} else if (fights[ufc][fight].winner == fighter2 && fights[ufc][fight].loser == fighter1) {
-					fighter2Wins++;
-					totalFights++;
-				} else if (
-					(fights[ufc][fight].tie1 == fighter1 && fights[ufc][fight].tie2 == fighter2) ||
-					(fights[ufc][fight].tie1 == fighter2 && fights[ufc][fight].tie2 == fighter1)
-				) {
-					fighterTies++;
-					totalFights++;
-				}
-			}
-		}
-		let fighter1Total = `${fighters[fighter1].wins} - ${fighters[fighter1].losses} - ${fighters[fighter1].ties}`;
-		let fighter2Total = `${fighters[fighter2].wins} - ${fighters[fighter2].losses} - ${fighters[fighter2].ties}`;
-		$('#fighterComparison').replaceWith(` 
-        
-		
-		<div class="comparisonBox" id="fighterComparison">
-			<div class="compareHeadliner">
-				<h2>Fighter Comparison</h2>
-				<h3>${fighter1} vs ${fighter2}</h3>
-				<p>Total Fights Against Each Other: ${totalFights}</p>
-			</div>
-			<div class="compareBoxes">
-				<div>
-				<h4>${fighter1}</h4>
-				<p>Total Record: ${fighter1Total}</p>
-				<p>Record Against ${fighter2}: ${fighter1Wins} - ${fighter2Wins} - ${fighterTies}</p>
-				</div>
-				<div>
-				<h4>${fighter2}</h4>
-				<p>Total Record: ${fighter2Total}</p>
-				<p>Record Against ${fighter1}: ${fighter2Wins} - ${fighter1Wins} - ${fighterTies}</p>
-				</div>
-			</div>
-        </div>
-    `);
-	}
-}
-
-function fighterListSetup() {
-	let listItems = '';
-
-	let abcFighters = Object.entries(fighters);
-
-	for (let i = 1; i < Object.keys(abcFighters).length; i++) {
-		for (var j = 0; j < i; j++) {
-			// Sorts by the current sort method
-			if (abcFighters[j][1].name > abcFighters[i][1].name) {
-				var x = abcFighters[j];
-				abcFighters[j] = abcFighters[i];
-				abcFighters[i] = x;
-			}
-		}
-	}
-
-	for (var key in abcFighters) {
-		listItems += `<option value="${abcFighters[key][1].name}">${abcFighters[key][1].name}</option>`;
-	}
-
-	$('#fighter1').replaceWith(` 
-        <select name="fighter1" id="fighter1" class="">
-            <option value="" disabled selected>Fighter 1</option>
-            ${listItems}
-        </select>`);
-	$('#fighter2').replaceWith(` 
-        <select name="fighter2" id="fighter2" class="">
-            <option value="" disabled selected>Fighter 2</option>
-            ${listItems}
-        </select>`);
-}
-
-function styleListSetup() {
-	let listItems = '';
-
-	let abcFighting = Object.entries(fightingStyles);
-
-	for (let i = 1; i < Object.keys(abcFighting).length; i++) {
-		for (var j = 0; j < i; j++) {
-			// Sorts by the current sort method
-			if (abcFighting[j][1].name > abcFighting[i][1].name) {
-				var x = abcFighting[j];
-				abcFighting[j] = abcFighting[i];
-				abcFighting[i] = x;
-			}
-		}
-	}
-
-	for (var key in abcFighting) {
-		listItems += `<option value="${abcFighting[key][1].name}">${abcFighting[key][1].name}</option>`;
-	}
-
-	$('#fightingStyle1').replaceWith(` 
-        <select name="fightingStyle1" id="fightingStyle1" class="">
-            <option value="" disabled selected>Fighting Style 1</option>
-            ${listItems}
-        </select>`);
-	$('#fightingStyle2').replaceWith(` 
-        <select name="fightingStyle2" id="fightingStyle2" class="">
-            <option value="" disabled selected>Fighting Style 2</option>
-            ${listItems}
-        </select>`);
-}
+*/

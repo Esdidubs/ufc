@@ -395,10 +395,10 @@ let fights = {
 	'UFC 6: Clash of the Titans'                                          : {
 		fight1  : { winner: 'Ken Shamrock', loser: 'Dan Severn', method: 'Submission', roundTime: 134, winningStyle: 'Shootfighting', losingStyle: 'Wrestling' },
 		fight2  : { winner: 'Oleg Taktarov', loser: 'Tank Abbott', method: 'Submission', roundTime: 1067, winningStyle: 'Sambo', losingStyle: 'Wrestling' },
-		fight3  : { winner: 'Tank Abbott', loser: 'Paul Varelans', method: 'TKO', roundTime: 113, winningStyle: 'Wrestling', losingStyle: 'Wrestling' },
+		fight3  : { winner: 'Tank Abbott', loser: 'Paul Varelans', method: 'TKO', roundTime: 113, winningStyle: 'Wrestling', losingStyle: 'Freestyle' },
 		fight4  : { winner: 'Oleg Taktarov', loser: 'Anthony Macias', method: 'Submission', roundTime: 9, winningStyle: 'Sambo', losingStyle: 'Muay Thai' },
 		fight5  : { winner: 'Tank Abbott', loser: 'John Matua', method: 'KO', roundTime: 20, winningStyle: 'Wrestling', losingStyle: 'Lua' },
-		fight6  : { winner: 'Paul Varelans', loser: 'Cal Worsham', method: 'KO', roundTime: 62, winningStyle: 'Wrestling', losingStyle: 'Boxing' },
+		fight6  : { winner: 'Paul Varelans', loser: 'Cal Worsham', method: 'KO', roundTime: 62, winningStyle: 'Freestyle', losingStyle: 'Boxing' },
 		fight7  : { winner: 'Patrick Smith', loser: 'Rudyard Moncayo', method: 'Submission', roundTime: 68, winningStyle: 'Taekwondo', losingStyle: 'American Kenpo' },
 		fight8  : { winner: 'Oleg Taktarov', loser: 'Dave Beneteau', method: 'Submission', roundTime: 57, winningStyle: 'Sambo', losingStyle: 'Wrestling' },
 		fight9  : { winner: 'Joel Sutton', loser: 'Jack McLaughlin', method: 'Submission', roundTime: 121, winningStyle: 'Kung Fu', losingStyle: 'Unknown' },
@@ -414,10 +414,10 @@ let fights = {
 			roundTime : 1980,
 			isTie     : true
 		},
-		fight2  : { winner: 'Marco Ruas', loser: 'Paul Varelans', method: 'TKO', roundTime: 797, winningStyle: 'Luta Livre', losingStyle: 'Wrestling' },
-		fight3  : { winner: 'Paul Varelans', loser: 'Mark Hall', method: 'Submission', roundTime: 64, winningStyle: 'Wrestling', losingStyle: 'Jujutsu' },
+		fight2  : { winner: 'Marco Ruas', loser: 'Paul Varelans', method: 'TKO', roundTime: 797, winningStyle: 'Luta Livre', losingStyle: 'Freestyle' },
+		fight3  : { winner: 'Paul Varelans', loser: 'Mark Hall', method: 'Submission', roundTime: 64, winningStyle: 'Freestyle', losingStyle: 'Jujutsu' },
 		fight4  : { winner: 'Marco Ruas', loser: 'Remco Pardoel', method: 'Submission', roundTime: 747, winningStyle: 'Luta Livre', losingStyle: 'Jujutsu' },
-		fight5  : { winner: 'Paul Varelans', loser: 'Gerry Harris', method: 'Submission', roundTime: 67, winningStyle: 'Wrestling', losingStyle: 'Kyokushin Karate' },
+		fight5  : { winner: 'Paul Varelans', loser: 'Gerry Harris', method: 'Submission', roundTime: 67, winningStyle: 'Freestyle', losingStyle: 'Kyokushin Karate' },
 		fight6  : { winner: 'Mark Hall', loser: 'Harold Howard', method: 'Submission', roundTime: 101, winningStyle: 'Jujutsu', losingStyle: 'Gōjū-ryū Karate' },
 		fight7  : { winner: 'Remco Pardoel', loser: 'Ryan Parker', method: 'Submission', roundTime: 185, winningStyle: 'Jujutsu', losingStyle: 'Shotokan Karate' },
 		fight8  : { winner: 'Marco Ruas', loser: 'Larry Cureton', method: 'Submission', roundTime: 203, winningStyle: 'Luta Livre', losingStyle: 'Kickboxing' },
@@ -431,7 +431,7 @@ let fights = {
 		fight2  : { winner: 'Dan Severn', loser: 'Tank Abbott', method: 'Decision', roundTime: 1080, winningStyle: 'Wrestling', losingStyle: 'Wrestling' },
 		fight3  : { winner: 'Oleg Taktarov', loser: 'Marco Ruas', method: 'Decision', roundTime: 1080, winningStyle: 'Sambo', losingStyle: 'Luta Livre' },
 		fight4  : { winner: 'Tank Abbott', loser: 'Steve Jennum', method: 'Submission', roundTime: 74, winningStyle: 'Wrestling', losingStyle: 'Ninjutsu' },
-		fight5  : { winner: 'Dan Severn', loser: 'Paul Varelans', method: 'Submission', roundTime: 61, winningStyle: 'Wrestling', losingStyle: 'Wrestling' },
+		fight5  : { winner: 'Dan Severn', loser: 'Paul Varelans', method: 'Submission', roundTime: 61, winningStyle: 'Wrestling', losingStyle: 'Freestyle' },
 		fight6  : { winner: 'Marco Ruas', loser: 'Keith Hackney', method: 'Submission', roundTime: 159, winningStyle: 'Luta Livre', losingStyle: 'American Kenpo' },
 		fight7  : { winner: 'Oleg Taktarov', loser: 'Dave Beneteau', method: 'Submission', roundTime: 75, winningStyle: 'Sambo', losingStyle: 'Wrestling' },
 		fight8  : { winner: 'Joe Charles', loser: 'Scott Bessac', method: 'Submission', roundTime: 278, winningStyle: 'Judo', losingStyle: 'Pancrase' },
@@ -443,12 +443,12 @@ let fights = {
 		fight1 : { winner: 'Ken Shamrock', loser: 'Kimo Leopoldo', method: 'Submission', roundTime: 264, winningStyle: 'Shootfighting', losingStyle: 'Taekwondo' },
 		fight2 : { winner: 'Don Frye', loser: 'Gary Goodridge', method: 'Submission', roundTime: 134, winningStyle: 'Wrestling', losingStyle: 'Kuk Sool Won' },
 		fight3 : { winner: 'Don Frye', loser: 'Sam Adkins', method: 'TKO', roundTime: 48, winningStyle: 'Wrestling', losingStyle: 'Boxing' },
-		fight4 : { winner: 'Gary Goodridge', loser: 'Jerry Bohlander', method: 'TKO', roundTime: 331, winningStyle: 'Kuk Sool Won', losingStyle: 'Wrestling' },
-		fight5 : { winner: 'Don Frye', loser: 'Thomas Ramirez', method: 'KO', roundTime: 8, winningStyle: 'Wrestling', losingStyle: '' },
-		fight6 : { winner: 'Paul Varelans', loser: 'Joe Moreira', method: 'Decision', roundTime: 600, winningStyle: 'Wrestling', losingStyle: '' },
-		fight7 : { winner: 'Jerry Bohlander', loser: 'Scott Ferrozzo', method: 'Submission', roundTime: 543, winningStyle: 'Wrestling', losingStyle: '' },
-		fight8 : { winner: 'Gary Goodridge', loser: 'Paul Herrera', method: 'KO', roundTime: 13, winningStyle: 'Kuk Sool Won', losingStyle: '' },
-		fight9 : { winner: 'Sam Adkins', loser: 'Keith Mielke', method: 'Submission', roundTime: 50, winningStyle: 'Boxing', losingStyle: '' }
+		fight4 : { winner: 'Gary Goodridge', loser: 'Jerry Bohlander', method: 'TKO', roundTime: 331, winningStyle: 'Kuk Sool Won', losingStyle: 'Shootfighting' },
+		fight5 : { winner: 'Don Frye', loser: 'Thomas Ramirez', method: 'KO', roundTime: 8, winningStyle: 'Wrestling', losingStyle: 'Pakua-Chan' },
+		fight6 : { winner: 'Paul Varelans', loser: 'Joe Moreira', method: 'Decision', roundTime: 600, winningStyle: 'Freestyle', losingStyle: 'Jiu Jitsu' },
+		fight7 : { winner: 'Jerry Bohlander', loser: 'Scott Ferrozzo', method: 'Submission', roundTime: 543, winningStyle: 'Shootfighting', losingStyle: 'Pitfighting' },
+		fight8 : { winner: 'Gary Goodridge', loser: 'Paul Herrera', method: 'KO', roundTime: 13, winningStyle: 'Kuk Sool Won', losingStyle: 'Wrestling' },
+		fight9 : { winner: 'Sam Adkins', loser: 'Keith Mielke', method: 'Submission', roundTime: 50, winningStyle: 'Boxing', losingStyle: 'Judo' }
 	},
 
 	'UFC 9: Motor City Madness'                                           : {
@@ -459,7 +459,7 @@ let fights = {
 		fight5 : { winner: 'Mark Schultz', loser: 'Gary Goodridge', method: 'TKO', roundTime: 720, winningStyle: '', losingStyle: 'Kuk Sool Won' },
 		fight6 : { winner: 'Mark Hall', loser: 'Koji Kitao', method: 'TKO', roundTime: 40, winningStyle: 'Jujutsu', losingStyle: '' },
 		fight7 : { winner: 'Don Frye', loser: 'Amaury Bitetti', method: 'TKO', roundTime: 562, winningStyle: 'Wrestling', losingStyle: '' },
-		fight8 : { winner: 'Paul Varelans', loser: 'Joe Moreira', method: 'Decision', roundTime: 600, winningStyle: '', losingStyle: 'Wrestling' }
+		fight8 : { winner: 'Paul Varelans', loser: 'Joe Moreira', method: 'Decision', roundTime: 600, winningStyle: 'Freestyle', losingStyle: 'Jiu Jitsu' }
 	},
 
 	'UFC 10: The Tournament'                                              : {
@@ -476,12 +476,12 @@ let fights = {
 
 	'UFC 11: The Proving Ground'                                          : {
 		fight1 : { winner: 'Mark Coleman', loser: 'Brian Johnston', method: 'Submission', roundTime: 140, winningStyle: '', losingStyle: '' },
-		fight2 : { winner: 'Scott Ferrozzo', loser: 'Tank Abbott', method: 'Decision', roundTime: 1080, winningStyle: '', losingStyle: 'Wrestling' },
+		fight2 : { winner: 'Scott Ferrozzo', loser: 'Tank Abbott', method: 'Decision', roundTime: 1080, winningStyle: 'Pitfighting', losingStyle: 'Wrestling' },
 		fight3 : { winner: 'Mark Coleman', loser: 'Julian Sanchez', method: 'Submission', roundTime: 45, winningStyle: '', losingStyle: '' },
 		fight4 : { winner: 'Brian Johnston', loser: 'Reza Nasri', method: 'TKO', roundTime: 28, winningStyle: '', losingStyle: '' },
 		fight5 : { winner: 'Tank Abbott', loser: 'Sam Adkins', method: 'Submission', roundTime: 126, winningStyle: 'Wrestling', losingStyle: 'Boxing' },
-		fight6 : { winner: 'Jerry Bohlander', loser: 'Fabio Gurgel', method: 'Decision', roundTime: 900, winningStyle: 'Wrestling', losingStyle: '' },
-		fight7 : { winner: 'Scott Ferrozzo', loser: 'Sam Fulton', method: 'Submission', roundTime: 105, winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Jerry Bohlander', loser: 'Fabio Gurgel', method: 'Decision', roundTime: 900, winningStyle: 'Shootfighting', losingStyle: '' },
+		fight7 : { winner: 'Scott Ferrozzo', loser: 'Sam Fulton', method: 'Submission', roundTime: 105, winningStyle: 'Pitfighting', losingStyle: '' },
 		fight8 : { winner: 'Roberto Traven', loser: 'Dave Berry', method: 'Submission', roundTime: 83, winningStyle: '', losingStyle: '' }
 	},
 
@@ -492,20 +492,20 @@ let fights = {
 		fight4  : { winner: 'Ken Shamrock', loser: 'Brian Johnston', method: 'Submission', roundTime: 348, winningStyle: 'Shootfighting', losingStyle: '' },
 		fight5  : { winner: 'Tank Abbott', loser: 'Cal Worsham', method: 'Submission', roundTime: 171, winningStyle: 'Wrestling', losingStyle: 'Boxing' },
 		fight6  : { winner: 'Don Frye', loser: 'Gary Goodridge', method: 'Submission', roundTime: 679, winningStyle: 'Wrestling', losingStyle: 'Kuk Sool Won' },
-		fight7  : { winner: 'Kimo Leopoldo', loser: 'Paul Varelans', method: 'TKO', roundTime: 548, winningStyle: 'Taekwondo', losingStyle: 'Wrestling' },
+		fight7  : { winner: 'Kimo Leopoldo', loser: 'Paul Varelans', method: 'TKO', roundTime: 548, winningStyle: 'Taekwondo', losingStyle: 'Freestyle' },
 		fight8  : { winner: 'Mark Hall', loser: 'Felix Mitchell', method: 'TKO', roundTime: 105, winningStyle: 'Jujutsu', losingStyle: 'Shaolinquan' },
 		fight9  : { winner: 'Steve Nelmark', loser: 'Marcus Bossett', method: 'Submission', roundTime: 97, winningStyle: '', losingStyle: 'Karate' },
 		fight10 : { winner: 'Tai Bowden', loser: 'Jack Nilson', method: 'Submission', roundTime: 286, winningStyle: '', losingStyle: '' }
 	},
 
 	'UFC 12: Judgement Day'                                               : {
-		fight1 : { winner: 'Jerry Bohlander', loser: 'Nick Sanzo', method: 'Submission', roundTime: 39, winningStyle: 'Wrestling', losingStyle: '' },
-		fight2 : { winner: 'Jerry Bohlander', loser: 'Rainy Martinez', method: 'Submission', roundTime: 78, winningStyle: 'Wrestling', losingStyle: '' },
+		fight1 : { winner: 'Jerry Bohlander', loser: 'Nick Sanzo', method: 'Submission', roundTime: 39, winningStyle: 'Shootfighting', losingStyle: '' },
+		fight2 : { winner: 'Jerry Bohlander', loser: 'Rainy Martinez', method: 'Submission', roundTime: 78, winningStyle: 'Shootfighting', losingStyle: '' },
 		fight3 : { winner: 'Yoshiki Takahashi', loser: 'Wallid Ismail', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: '' },
 		fight4 : { winner: 'Nick Sanzo', loser: 'Jackie Lee', method: 'TKO', roundTime: 48, winningStyle: '', losingStyle: '' },
 		fight5 : { winner: 'Mark Coleman', loser: 'Dan Severn', method: 'Submission', roundTime: 177, winningStyle: '', losingStyle: 'Wrestling' },
-		fight6 : { winner: 'Vitor Belfort', loser: 'Scott Ferrozzo', method: 'TKO', roundTime: 43, winningStyle: '', losingStyle: '' },
-		fight7 : { winner: 'Scott Ferrozzo', loser: 'Jim Mullen', method: 'TKO', roundTime: 482, winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Vitor Belfort', loser: 'Scott Ferrozzo', method: 'TKO', roundTime: 43, winningStyle: '', losingStyle: 'Pitfighting' },
+		fight7 : { winner: 'Scott Ferrozzo', loser: 'Jim Mullen', method: 'TKO', roundTime: 482, winningStyle: 'Pitfighting', losingStyle: '' },
 		fight8 : { winner: 'Vitor Belfort', loser: 'Tra Telligman', method: 'TKO', roundTime: 77, winningStyle: '', losingStyle: '' },
 		fight9 : { winner: 'Justin Martin', loser: 'Eric Martin', method: 'Submission', roundTime: 14, winningStyle: '', losingStyle: '' }
 	},
@@ -525,7 +525,7 @@ let fights = {
 	'UFC 14: Showdown'                                                    : {
 		fight1 : { winner: 'Maurice Smith', loser: 'Mark Coleman', method: 'Decision', roundTime: 1260, winningStyle: '', losingStyle: '' },
 		fight2 : { winner: 'Kevin Jackson', loser: 'Tony Fryklund', method: 'Submission', roundTime: 44, winningStyle: '', losingStyle: '' },
-		fight3 : { winner: 'Joe Moreira', loser: 'Yuri Vaulin', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Joe Moreira', loser: 'Yuri Vaulin', method: 'Decision', roundTime: 900, winningStyle: 'Jiu Jitsu', losingStyle: '' },
 		fight4 : { winner: 'Kevin Jackson', loser: 'Todd Butler', method: 'Submission', roundTime: 87, winningStyle: '', losingStyle: '' },
 		fight5 : { winner: 'Tony Fryklund', loser: 'Donnie Chappell', method: 'Submission', roundTime: 91, winningStyle: '', losingStyle: '' },
 		fight6 : { winner: 'Mark Kerr', loser: 'Dan Bobish', method: 'Submission', roundTime: 98, winningStyle: '', losingStyle: '' },
@@ -557,7 +557,7 @@ let fights = {
 	'UFC 16: Battle in the Bayou'                                         : {
 		fight1 : { winner: 'Frank Shamrock', loser: 'Igor Zinoviev', method: 'KO', roundTime: 22, winningStyle: '', losingStyle: '' },
 		fight2 : { winner: 'Tsuyoshi Kohsaka', loser: 'Kimo Leopoldo', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: 'Taekwondo' },
-		fight3 : { winner: 'Jerry Bohlander', loser: 'Kevin Jackson', method: 'Technical Submission', roundTime: 621, winningStyle: 'Wrestling', losingStyle: '' },
+		fight3 : { winner: 'Jerry Bohlander', loser: 'Kevin Jackson', method: 'Technical Submission', roundTime: 621, winningStyle: 'Shootfighting', losingStyle: '' },
 		fight4 : { winner: 'Pat Miletich', loser: 'Chris Brennan', method: 'Submission', roundTime: 541, winningStyle: '', losingStyle: '' },
 		fight5 : { winner: 'Mikey Burnett', loser: 'Eugenio Tadeu', method: 'TKO', roundTime: 586, winningStyle: '', losingStyle: '' },
 		fight6 : { winner: 'Pat Miletich', loser: 'Townsend Saunders', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: '' },
@@ -592,7 +592,7 @@ let fights = {
 		fight1 : { winner: 'Pat Miletich', loser: 'Jorge Patino', method: 'Decision', roundTime: 1260, winningStyle: '', losingStyle: '' },
 		fight2 : { winner: 'Evan Tanner', loser: 'Darrel Gholar', method: 'Submission', roundTime: 477, winningStyle: '', losingStyle: '' },
 		fight3 : { winner: 'Mikey Burnett', loser: 'Townsend Saunders', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: '' },
-		fight4 : { winner: 'Tito Ortiz', loser: 'Jerry Bohlander', method: 'TKO', roundTime: 871, winningStyle: '', losingStyle: 'Wrestling' },
+		fight4 : { winner: 'Tito Ortiz', loser: 'Jerry Bohlander', method: 'TKO', roundTime: 871, winningStyle: '', losingStyle: 'Shootfighting' },
 		fight5 : { winner: 'Pedro Rizzo', loser: 'Mark Coleman', method: 'Decision', roundTime: 900, winningStyle: '', losingStyle: '' },
 		fight6 : { winner: 'Bas Rutten', loser: 'Tsuyoshi Kosaka', method: 'TKO', roundTime: 855, winningStyle: '', losingStyle: '' },
 		fight7 : { winner: 'Laverne Clark', loser: 'Frank Caracci', method: 'Submission', roundTime: 419, winningStyle: '', losingStyle: '' }
