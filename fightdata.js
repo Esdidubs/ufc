@@ -7558,5 +7558,78 @@ let fights = {
 		fight8  : { winner: 'Tanner Boser', loser: 'Philipe Lins', method: 'KO', winningStyle: '', losingStyle: '' },
 		fight9  : { winner: 'Kay Hansen', loser: 'Jinh Yu Frey', method: 'Submission', winningStyle: '', losingStyle: '' },
 		fight10 : { winner: 'Youssef Zalal', loser: 'Jordan Griffin', method: 'Decision', winningStyle: '', losingStyle: '' }
+	},
+
+	'UFC 251: Usman vs. Masvidal'                                     : {
+		fight1 : { winner: 'Kamaru Usman', loser: 'Jorge Masvidal', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight2 : { winner: 'Alexander Volkanovski', loser: 'Max Holloway', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Petr Yan', loser: 'José Aldo', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight4 : { winner: 'Rose Namajunas', loser: 'Jéssica Andrade', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight5 : { winner: 'Amanda Ribas', loser: 'Paige VanZant', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Jiří Procházka', loser: 'Volkan Oezdemir', method: 'KO', winningStyle: '', losingStyle: '' },
+		fight7 : { winner: 'Muslim Salikhov', loser: 'Elizeu Zaleski dos Santos', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight8 : { winner: 'Makwan Amirkhani', loser: 'Danny Henry', method: 'Technical Submission', winningStyle: '', losingStyle: '' },
+		fight9 : { winner: 'Leonardo Santos', loser: 'Roman Bogatov', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight10 : { winner: 'Marcin Tybura', loser: 'Maxim Grishin', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight11 : { winner: 'Raulian Paiva', loser: 'Zhalgas Zhumagulov', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight12 : { winner: 'Karol Rosa', loser: 'Vanessa Melo', method: 'Decision', winningStyle: '', losingStyle: '' }
+	}, 
+
+	'UFC on ESPN: Kattar vs. Ige'                                     : {
+		fight1 : { winner: 'Calvin Kattar', loser: 'Dan Ige', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight2 : { winner: 'Tim Elliott', loser: 'Ryan Benoit', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Jimmie Rivera', loser: 'Cody Stamann', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight4 : { winner: 'Taila Santos', loser: 'Molly McCann', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight5 : { winner: 'Mounir Lazzez', loser: 'Abdul Razak Alhassan', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Khamzat Chimaev', loser: 'John Phillips', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight7 : { winner: 'Lerone Murphy', loser: 'Ricardo Ramos', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight8 : { winner: 'Modestas Bukauskas', loser: 'Andreas Michailidis', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight9 : { winner: 'Jared Gordon', loser: 'Chris Fishgold', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight10 : { winner: 'Liana Jojua', loser: 'Diana Belbiţă', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight11 : { winner: 'Jack Shore', loser: 'Aaron Phillips', method: 'Submission', winningStyle: '', losingStyle: '' }
+	}, 
+
+	'UFC Fight Night: Figueiredo vs. Benavidez 2'                                     : {
+		fight1 : { winner: 'Deiveson Figueiredo', loser: 'Joseph Benavidez', method: 'Technical Submission', winningStyle: '', losingStyle: '' },
+		fight2 : { winner: 'Jack Hermansson', loser: 'Kelvin Gastelum', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Rafael Fiziev', loser: 'Marc Diakiese', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight4 : { winner: 'Ariane Lipski', loser: 'Luana Carolina', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight5 : { winner: 'Askar Askarov', loser: 'Alexandre Pantoja', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Roman Dolidze', loser: 'Khadis Ibragimov', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight7 : { winner: 'Grant Dawson', loser: 'Nad Narimani', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight8 : { winner: 'Joel Álvarez', loser: 'Joseph Duffy', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight9 : { winner: 'Brett Johns', loser: 'Montel Jackson', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight10 : { winner: 'Amir Albazi', loser: 'Malcolm Gordon', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight11 : { winner: 'Arman Tsarukyan', loser: 'Davi Ramos', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight12 : { winner: 'Sergey Spivak', loser: 'Carlos Felipe', method: 'Decision', winningStyle: '', losingStyle: '' }
+	}, 
+
+	'UFC on ESPN: Whittaker vs. Till'                                     : {
+		fight1 : { winner: 'Robert Whittaker', loser: 'Darren Till', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight2 : { winner: 'Maurício Rua', loser: 'Antônio Rogério Nogueira', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Fabrício Werdum', loser: 'Alexander Gustafsson', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight4 : { winner: 'Carla Esparza', loser: 'Marina Rodriguez', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight5 : { winner: 'Paul Craig', loser: 'Gadzhimurad Antigulov', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Alex Oliveira', loser: 'Peter Sobotta', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight7 : { winner: 'Khamzat Chimaev', loser: 'Rhys McKee', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight8 : { winner: 'Francisco Trinaldo', loser: 'Jai Herbert', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight9 : { winner: 'Jesse Ronson', loser: 'Nicolas Dalby', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight10 : { winner: 'Tom Aspinall', loser: 'Jake Collier', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight11 : { winner: 'Movsar Evloev', loser: 'Mike Grundy', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight12 : { winner: 'Tanner Boser', loser: 'Raphael Pessoa', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight13 : { winner: 'Pannie Kianzad', loser: 'Bethe Correia', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight14 : { winner: 'Ramazan Emeev', loser: 'Niklas Stolze', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight15 : { winner: 'Nathaniel Wood', loser: 'John Castañeda', method: 'Decision', winningStyle: '', losingStyle: '' }
+	}, 
+
+	'UFC Fight Night: Brunson vs. Shahbazyan'                                     : {
+		fight1 : { winner: 'Derek Brunson', loser: 'Edmen Shahbazyan', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight2 : { winner: 'Jennifer Maia', loser: 'Joanne Calderwood', method: 'Submission', winningStyle: '', losingStyle: '' },
+		fight3 : { winner: 'Vicente Luque', loser: 'Randy Brown', method: 'KO', winningStyle: '', losingStyle: '' },
+		fight4 : { winner: 'Bobby Green', loser: 'Lando Vannata', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight5 : { winner: 'Jonathan Martinez', loser: 'Frankie Saenz', method: 'TKO', winningStyle: '', losingStyle: '' },
+		fight6 : { winner: 'Nathan Maness', loser: 'Johnny Muñoz', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight7 : { winner: 'Jamall Emmers', loser: 'Vincent Cachero', method: 'Decision', winningStyle: '', losingStyle: '' },
+		fight8 : { tie1: 'Chris Gutiérrez', tie2: 'Cody Durden', tieStyle1: '', tieStyle2: '', isTie: true },
 	}
 };
